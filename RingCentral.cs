@@ -79,7 +79,11 @@ namespace ConsoleApp
 
             var r = await rc.Restapi().Account("~").Extension("~").CallLog().List(logParameters);
             //process response
-            Console.WriteLine(r.records.Length);
+            Console.WriteLine("log:");
+            for(int i = 0; i < r.records.Length; i++)
+            {
+                Console.WriteLine(r.records[i]);
+            }
         }
     }
 }
